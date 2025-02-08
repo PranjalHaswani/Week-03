@@ -9,7 +9,8 @@ public class SortLargeData{
         long startTime = System.nanoTime();
         boolean swapped;
         for (int i = 0; i < array.length - 1; i++) {
-            swapped = false;  // Reset swapped flag at the start of each pass
+            // Reset swapped flag at the start of each pass
+            swapped = false;
             for (int j = 0; j < array.length - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
                     int temp = array[j];
@@ -19,13 +20,13 @@ public class SortLargeData{
                 }
             }
             if (!swapped) {
-                break;  // Stop early if no swaps were made
+                break;
             }
         }
         long endTime = System.nanoTime();
-        return (endTime - startTime) / 1e6;  // Convert to milliseconds
+        // Convert to milliseconds
+        return (endTime - startTime) / 1e6;
     }
-
     // Merge Sort Wrapper
     public static double mergeSort(int[] arr) {
         long startTime = System.nanoTime();
@@ -109,7 +110,8 @@ public class SortLargeData{
     }
 
     public static void main(String[] args) {
-        int[] sizes = {1000, 10000, 50000};  // Adjusting array sizes
+        int[] sizes = {1000, 10000, 50000};
+        // Adjusting array sizes
         Random random = new Random();
 
         for (int N : sizes) {
